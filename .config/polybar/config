@@ -1,0 +1,156 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+;;; COLOR CONFIG ;;;
+
+[colors]
+background = #0b0c17 
+foreground = #f8f8f2 
+red = #ff0000
+orange = #ff6800
+yellow = #ffed00
+green = #05ff00
+blue = #74c8ef
+cyan = #00fff0
+pink = #ff79c6
+purple = #bd93f9
+black = #0d0c12
+
+;;; BAR CONFIG ;;;
+
+[bar/mybar]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 24 
+;offset-x = 12
+;offset-y = 1%
+radius = 0.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+bottom = false
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #ff7300
+
+padding-left = 0 
+padding-right = 1 
+
+module-margin-left = 1
+module-margin-right = 1
+
+;;; FONT CONFIG ;;;
+
+font-0 = Hermit:pixelsize=9;2
+font-1 = Monospace:pixelsize=14;4
+font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
+
+;;; MODULES ;;;
+
+modules-left = bspwm title 
+modules-right = bat vol datetime
+
+; tray-position = right
+; tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+;;; MODULE CONFIGURATION ;;;
+
+[module/bspwm]
+type = internal/bspwm 
+format-padding = 0 
+format-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.blue}
+label-focused-underline = ${colors.blue}
+label-occupied-underline = ${colors.red}
+
+[module/title]
+type = internal/xwindow
+format-underline = ${colors.orange}
+format-padding = 0
+format-foreground = ${colors.foreground}
+
+[module/bat]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/battery.sh
+interval = 5
+format-underline = ${colors.yellow}
+format-padding = 0
+format-foreground = ${colors.foreground}
+
+[module/vol]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/volume.sh
+interval = 0 
+format-underline = ${colors.green}
+format-padding = 0
+format-foreground = ${colors.foreground}
+
+[module/datetime]
+type = custom/script
+exec = date +"%a %d, %R"
+interval = 5
+format-underline = ${colors.cyan}
+format-padding = 0
+format-foreground = ${colors.foreground}
+
+;;; THE END OF CONFIG ;;;
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-bottom = 5
+margin-top = 5
