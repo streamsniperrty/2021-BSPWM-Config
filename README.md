@@ -2,7 +2,9 @@
 
 Another great window manager, no introduction needed. I decided to reconfigure some components of my desktop, using the tiling window manager BSPWM. In this repository, I've included my configuration files for Alacritty, picom, polybar, etc.
 
-![My BSPWM Desktop](screenshots/bspwm-main.png)
+![My BSPWM Desktop](screenshots/MainDesktop.png)
+
+![My Workflow](screenshots/Workflow.png)
 
 ### Applications and Themes
 
