@@ -4,7 +4,7 @@ Another great window manager, no introduction needed. I decided to reconfigure s
 
 ![My BSPWM Desktop](screenshots/bspwm-main.png)
 
-### Applications
+### Applications and Themes
 
 I've installed these packages for my desktop configuration. To be clear, the applications I've named are the applications I have included configuration files for. That way, you know what I use and what I included. Of course, you can pick and choose which applications you need and don't need for your setup.
 
@@ -14,6 +14,8 @@ I've installed these packages for my desktop configuration. To be clear, the app
 * Polybar
 * dmenu
 * Vim
+* Theme: Nordic
+* Icons: Papirus-Dark
 
 ### Installation
 
