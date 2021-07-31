@@ -19,7 +19,7 @@ I've installed these packages for my desktop configuration. To be clear, the app
 
 You will need to install multiple packages by compiling from source and using the package manager. In my case, I am using Ubuntu (Ubuntu 21.04 at the time of writing this).
 
-``` sudo apt-get install bspwm sxhkd vim git feh ```
+``` sudo apt-get install bspwm sxhkd vim git feh meson ```
 
 Because we are using Ubuntu, not all packages will be available in the package manager. Therefore, we need to compile the rest from source. I will only include the URLs of each application that needs to be compiled from source.
 
