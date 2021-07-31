@@ -27,6 +27,8 @@ Because we are using Ubuntu, not all packages will be available in the package m
 * Picom - https://github.com/ibhagwan/picom 
 * Polybar - https://github.com/polybar/polybar
 * dmenu - https://tools.suckless.org/dmenu/
+
+Also, I use the font **Hermit** in my panel, terminal emulator, and desktop. You can use the same font or change it to your specification.
  
 ### OPTIONAL: Recommended for Laptops
 
